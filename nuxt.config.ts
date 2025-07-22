@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   runtimeConfig: {
-    token: '123435435',
+    token: '',
+    apiUrl: '',
   },
 
   modules: [
