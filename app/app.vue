@@ -8,7 +8,7 @@ const hello = ref('hello world');
 <template>
   <div>
     {{ hello }}
-    <TestComponent />
+    <TestOne />
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
   </div>
