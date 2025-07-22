@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const hello = ref('hello world');
 
-console.log(hello.value);
+// console.log(hello.value);
 
 </script>
 
