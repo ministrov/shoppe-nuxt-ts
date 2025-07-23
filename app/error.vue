@@ -3,6 +3,8 @@
     <h1>{{ error.statusCode }}</h1>
 
     <div>{{ error.statusMessage }}</div>
+
+    <ActionButton> Главная страница </ActionButton>
   </div>
 </template>
 
