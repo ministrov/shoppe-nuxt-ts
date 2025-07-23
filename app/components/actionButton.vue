@@ -26,7 +26,8 @@ const { color = "primary" } = defineProps<{
 }
 
 .primary:hover {
-  opacity: 0.8;
+  color: var(--color-black);
+  background-color: var(--color-white-light);
 }
 
 .ghost {
