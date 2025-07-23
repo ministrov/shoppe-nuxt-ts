@@ -5,13 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  runtimeConfig: {
-    token: '',
-    apiUrl: '',
-  },
+  // runtimeConfig: {
+  //   token: '',
+  //   apiUrl: '',
+  // },
 
   modules: [
-    // '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
