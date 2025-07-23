@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   //   token: '',
   //   apiUrl: '',
   // },
-
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -15,6 +14,14 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/icon',
   ],
+  icon: {
+    customCollections: [
+      {
+        prefix: 'icons',
+        dir: './app/assets/icons'
+      },
+    ],
+  },
   devtools: { enabled: true }, compatibilityDate: '2025-07-15',
   // eslint: {
   //   config: {

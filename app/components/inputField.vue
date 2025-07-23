@@ -1,5 +1,5 @@
 <template>
-  <input v-model="data" class="input" :class="variant" />
+  <input v-model="data" class="input" :class="variant" name="name" />
 </template>
 
 <script setup lang="ts">
