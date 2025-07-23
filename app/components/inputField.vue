@@ -15,11 +15,11 @@ console.log(data);
 .input {
   width: 100%;
   padding: 12px 0;
-  background: none;
-  border: none;
-  color: var(--color-black);
   font-size: 16px;
   font-weight: 400;
+  color: var(--color-black);
+  border: none;
+  background: none;
 }
 .input::placeholder {
   color: var(--color-dark-gray);

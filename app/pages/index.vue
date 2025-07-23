@@ -7,6 +7,10 @@
     <NuxtLink to="/about">About</NuxtLink>
 
     <!-- <button @click="openAbout">Move to</button> -->
+    <InputField
+      variant="black"
+      placeholder="Ваш email для акций и предложений"
+    />
   </div>
 </template>
 
