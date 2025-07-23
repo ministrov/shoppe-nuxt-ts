@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/scripts',
+    '@nuxt/icon',
   ],
   devtools: { enabled: true }, compatibilityDate: '2025-07-15',
   // eslint: {
