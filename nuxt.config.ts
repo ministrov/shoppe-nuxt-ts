@@ -15,5 +15,10 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/scripts'
-  ]
+  ],
+  eslint: {
+    config: {
+      stylistic: true // Enforces consistent style rules
+    }
+  }
 })
