@@ -6,7 +6,7 @@
 
     <NuxtLink to="/about">About</NuxtLink>
 
-    <Icon name="icons:twitter" />
+    <!-- <Icon name="icons:tw" /> -->
 
     <!-- <button @click="openAbout">Move to</button> -->
     <InputField
