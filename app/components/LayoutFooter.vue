@@ -21,16 +21,16 @@
       <div>© {{ new Date().getFullYear() }} Shoppe</div>
       <div class="footer__social">
         <NuxtLink to="#">
-          <!-- <Icon name="icons:li" size="30px" /> -->
+          <Icon name="icons:li" size="25px" />
         </NuxtLink>
         <NuxtLink to="#">
-          <!-- <Icon name="icons:fb" size="30px" /> -->
+          <Icon name="icons:fb" size="25px" />
         </NuxtLink>
         <NuxtLink to="#">
-          <!-- <Icon name="icons:in" size="30px" /> -->
+          <Icon name="icons:in" size="25px" />
         </NuxtLink>
         <NuxtLink to="#">
-          <!-- <Icon name="icons:tw" size="30px" /> -->
+          <Icon name="icons:tw" size="25px" />
         </NuxtLink>
       </div>
     </div>
@@ -39,17 +39,17 @@
 
 <style scoped>
 .footer {
-  padding: 0 16px;
-  margin: 0 auto;
-  max-width: 1248px;
   display: flex;
   flex-direction: column;
   gap: 50px;
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 .footer hr {
+  height: 1px;
   border: none;
   border-bottom: 1px solid var(--color-gray);
-  height: 1px;
 }
 .footer__top {
   display: flex;
@@ -57,18 +57,18 @@
 }
 
 .footer__top ul {
-  list-style: none;
   display: flex;
   padding: 0;
   gap: 30px;
+  list-style: none;
 }
 
 .footer__top ul a {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
-  color: var(--color-dark-gray);
   text-decoration: none;
+  color: var(--color-dark-gray);
 }
 
 .footer__top a:hover {
