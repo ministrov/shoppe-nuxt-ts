@@ -20,18 +20,7 @@
     <div class="footer__buttom">
       <div>© {{ new Date().getFullYear() }} Shoppe</div>
       <div class="footer__social">
-        <NuxtLink to="#">
-          <Icon name="icons:li" size="25px" />
-        </NuxtLink>
-        <NuxtLink to="#">
-          <Icon name="icons:fb" size="25px" />
-        </NuxtLink>
-        <NuxtLink to="#">
-          <Icon name="icons:in" size="25px" />
-        </NuxtLink>
-        <NuxtLink to="#">
-          <Icon name="icons:tw" size="25px" />
-        </NuxtLink>
+        <SocialIcons />
       </div>
     </div>
   </div>
@@ -80,18 +69,6 @@
   justify-content: space-between;
 }
 
-.footer__social {
-  display: flex;
-  gap: 20px;
-}
-
-.footer__social a {
-  color: var(--color-dark-gray);
-}
-
-.footer__social a:hover {
-  color: var(--color-dark);
-}
 .footer__form {
   position: relative;
 }
