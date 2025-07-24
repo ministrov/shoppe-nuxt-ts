@@ -34,6 +34,7 @@
   max-width: 1248px;
   margin: 0 auto;
   padding: 0 16px;
+  background-color: purple;
 }
 .footer hr {
   height: 1px;
@@ -43,6 +44,7 @@
 .footer__top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .footer__top ul {
