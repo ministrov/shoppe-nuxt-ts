@@ -1,10 +1,11 @@
-import { defineNuxtConfig } from 'nuxt/config'
+// import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
-    token: "",
-    apiUrl: "",
+    // token: process.env.TOKEN,
+    // apiurl: process.env.APIURL,
+    apiurl: "",
   },
   modules: [
     '@nuxt/eslint',

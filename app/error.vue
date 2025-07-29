@@ -37,7 +37,7 @@ function goHome() {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  max-width: 436px;
+  height: 100vh;
 }
 
 .error__message {
