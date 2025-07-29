@@ -29,11 +29,11 @@
 </template>
 
 <script setup>
-console.log("Setup");
+// console.log("Setup");
 
-onMounted(() => {
-  console.log("Mounted");
-});
+// onMounted(() => {
+//   console.log("Mounted");
+// });
 </script>
 
 <style scoped>
