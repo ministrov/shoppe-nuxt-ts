@@ -7,8 +7,6 @@ const { variant } = defineProps<{
   variant: "gray" | "black";
 }>();
 const data = defineModel<string>();
-
-console.log(data);
 </script>
 
 <style scoped>
