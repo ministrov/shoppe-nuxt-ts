@@ -6,12 +6,14 @@
 </template>
 
 <script setup lang="ts">
-import type { GetCategoriesResponse } from "~/interfaces/category.interface";
+// import type { GetCategoriesResponse } from "~/interfaces/category.interface";
 
 const config = useRuntimeConfig();
-const API_URL = config.public.apiUrl;
-const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories");
+// const API_URL = config.public.apiUrl;
+const token = config.public;
+// const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories");
 
-console.log(data);
+// console.log(data);
+console.log(token);
 // console.log(config.public);
 </script>

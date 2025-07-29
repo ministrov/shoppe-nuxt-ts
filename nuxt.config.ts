@@ -3,8 +3,8 @@ import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
-    // token: '',
-    apiUrl: process.env.APIURL || "http://localhost:3000",
+    token: "",
+    apiUrl: "",
   },
   modules: [
     '@nuxt/eslint',
