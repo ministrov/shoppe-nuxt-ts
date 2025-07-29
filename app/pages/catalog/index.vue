@@ -13,9 +13,14 @@ import type { GetCategoriesResponse } from "~/interfaces/category.interface";
 // const API_URL = useRuntimeConfig().public.apiurl;
 const API_URL = "http://localhost:3000/api";
 // const token = config.public.token;
-const data = await $fetch<GetCategoriesResponse>(API_URL + "/categoriess");
+try {
+  const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories");
 
-console.log(data);
+  console.log(data);
+} catch (e) {
+  console.log(e);
+}
+
 // console.log(token);
 // console.log(config.public);
 </script>
