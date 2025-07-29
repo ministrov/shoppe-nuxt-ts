@@ -2,31 +2,26 @@
   <div>
     <h1>Welcome to the Catalog Page</h1>
     <!-- <h1>Welcome to the Catalog Page</h1> -->
+    <InputField v-model="input" variant="black" />
+    <!-- <input v-model="input" type="text" /> -->
+    <button @click="sendData">Send</button>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { GetCategoriesResponse } from "~/interfaces/category.interface";
 
-// const config = useRuntimeConfig();
-// const API_URL = config.public.apiurl;
-// const API_URL = useRuntimeConfig().public.apiurl;
+const input = ref("");
 const API_URL = "http://localhost:3000/api";
-// const token = config.public.token;
-// try {
-//   const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories");
 
-//   console.log(data);
-// } catch (e) {
-//   console.log(e);
-// }
+async function sendData() {
+  const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories", {
+    method: "POST",
+    body: input,
+  });
 
-const { data, error } = await useFetch<GetCategoriesResponse>(
-  API_URL + "/categories"
-);
+  console.log(data);
+}
 
-// console.log(token);
-// console.log(config.public);
-console.log(data.value);
-console.log(error.value);
+console.log(input.value);
 </script>
