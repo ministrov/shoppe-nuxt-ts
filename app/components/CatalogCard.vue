@@ -1,13 +1,17 @@
 <template>
-  <div class="card">
+  <NuxtLink class="card" :to="`/catalog/${product.id}`">
     <div class="card__image">
-      <span class="card__discount">-{{ product.discount }}%</span>
+      <span v-if="product.discount > 0" class="card__discount"
+        >-{{ product.discount }}%</span
+      >
     </div>
-    <div class="card__name">
-      {{ product.name }}
+    <div class="card__footer">
+      <div class="card__name">
+        {{ product.name }}
+      </div>
+      <div class="card__price">$ {{ product.price }}</div>
     </div>
-    <div class="card__price">$ {{ product.price }}</div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -35,9 +39,7 @@ const image = computed(
   border-radius: 8px;
   padding: 16px;
   background-repeat: no-repeat;
-  /* background-size: cover; */
-  /* background-size: contain; */
-  /* background-position: center center; */
+  background-size: cover;
   background-image: v-bind(image);
   display: flex;
   justify-content: space-between;

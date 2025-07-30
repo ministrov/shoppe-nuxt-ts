@@ -8,6 +8,11 @@
       </div>
       <div class="catalog__cards">
         <CatalogCard v-bind="product" />
+        <CatalogCard v-bind="product" />
+        <CatalogCard v-bind="product" />
+        <CatalogCard v-bind="product" />
+        <CatalogCard v-bind="product" />
+        <CatalogCard v-bind="product" />
       </div>
     </div>
   </div>
@@ -65,6 +70,9 @@ const product: Product = {
 </script>
 
 <style scoped>
+.left {
+  margin-bottom: 38px;
+}
 .catalog {
   display: flex;
   gap: 36px;
@@ -72,5 +80,12 @@ const product: Product = {
 
 .catalog__filter {
   width: 260px;
+}
+
+.catalog__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  column-gap: 24px;
+  row-gap: 70px;
 }
 </style>
