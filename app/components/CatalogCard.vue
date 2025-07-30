@@ -2,8 +2,7 @@
   <NuxtLink class="card" :to="`/catalog/${product.id}`">
     <div class="card__image">
       <span v-if="product.discount > 0" class="card__discount"
-        >-{{ product.discount }}%</span
-      >
+        >-{{ product.discount }}%</span>
     </div>
     <div class="card__footer">
       <div class="card__name">

@@ -26,7 +26,7 @@ import type { Product } from "~/interfaces/product.interface";
 
 const config = useRuntimeConfig();
 const API_URL = config.public.apiurl;
-const MY_ENV_VAR = config.public.myEnvVariable;
+// const MY_ENV_VAR = config.public.myEnvVariable;
 const select = ref("");
 const { data } = await useFetch<GetCategoriesResponse>(API_URL + "/categories");
 const defaultSelect = { value: "", label: "Категория" };
@@ -41,7 +41,7 @@ const categoriesSelect = computed(() => {
     : [defaultSelect];
 });
 
-console.log(MY_ENV_VAR);
+// console.log(MY_ENV_VAR);
 
 const product: Product = {
   id: 1,
@@ -67,6 +67,7 @@ const product: Product = {
   created_at: new Date(),
   updated_at: new Date(),
 };
+// const { data: productsData } = await useFetch<GetProductsResponse>(API_URL + "/products");
 </script>
 
 <style scoped>
@@ -75,7 +76,7 @@ const product: Product = {
 }
 .catalog {
   display: flex;
-  gap: 36px;
+  gap: 40px;
 }
 
 .catalog__filter {
@@ -84,7 +85,7 @@ const product: Product = {
 
 .catalog__cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   column-gap: 24px;
   row-gap: 70px;
 }
