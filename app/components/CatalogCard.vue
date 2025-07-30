@@ -2,7 +2,8 @@
   <NuxtLink class="card" :to="`/catalog/${product.id}`">
     <div class="card__image">
       <span v-if="product.discount > 0" class="card__discount"
-        >-{{ product.discount }}%</span>
+        >-{{ product.discount }}%</span
+      >
     </div>
     <div class="card__footer">
       <div class="card__name">
@@ -34,7 +35,7 @@ const image = computed(
 .card__image {
   aspect-ratio: 1/1;
   width: 100%;
-  min-width: 320px;
+  min-width: 280px;
   border-radius: 8px;
   padding: 16px;
   background-repeat: no-repeat;

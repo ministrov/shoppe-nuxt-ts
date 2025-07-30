@@ -7,12 +7,11 @@
         <SelectField v-model="select" :options="categoriesSelect" />
       </div>
       <div class="catalog__cards">
-        <CatalogCard v-bind="product" />
-        <CatalogCard v-bind="product" />
-        <CatalogCard v-bind="product" />
-        <CatalogCard v-bind="product" />
-        <CatalogCard v-bind="product" />
-        <CatalogCard v-bind="product" />
+        <CatalogCard
+          v-for="product in productsData?.products"
+          :key="product.id"
+          v-bind="product"
+        />
       </div>
     </div>
   </div>
@@ -20,7 +19,7 @@
 
 <script setup lang="ts">
 import type { GetCategoriesResponse } from "~/interfaces/category.interface";
-import type { Product } from "~/interfaces/product.interface";
+import type { GetProductsResponse } from "~/interfaces/product.interface";
 
 // const API_URL = "http://localhost:3000/api";
 
@@ -41,33 +40,9 @@ const categoriesSelect = computed(() => {
     : [defaultSelect];
 });
 
-// console.log(MY_ENV_VAR);
-
-const product: Product = {
-  id: 1,
-  name: "Lira Earrings",
-  price: 20,
-  short_description: "Элегантные золотистые серьги-кольца",
-  long_description:
-    "Отлично подойдут к любому гардеробу. Чистое золото высокой пробы, которое не оставит вас равнодушными к качеству изделия.",
-  sku: "12",
-  discount: 0,
-  images: [
-    "/images/jewelry/lira1.jpg",
-    "/images/jewelry/lira2.jpg",
-    "/images/jewelry/lira3.jpg",
-    "/images/jewelry/lira4.jpg",
-  ],
-  category_id: 1,
-  category: {
-    id: 1,
-    name: "Серьги",
-    alias: "earrings",
-  },
-  created_at: new Date(),
-  updated_at: new Date(),
-};
-// const { data: productsData } = await useFetch<GetProductsResponse>(API_URL + "/products");
+const { data: productsData } = await useFetch<GetProductsResponse>(
+  API_URL + "/products"
+);
 </script>
 
 <style scoped>
