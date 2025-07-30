@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__image">
-      <div class="card__discount">-{{ product.discount }}%</div>
+      <span class="card__discount">-{{ product.discount }}%</span>
     </div>
     <div class="card__name">
       {{ product.name }}
@@ -14,6 +14,10 @@
 import type { Product } from "~/interfaces/product.interface";
 
 const product = defineProps<Product>();
+const config = useRuntimeConfig();
+const image = computed(
+  () => `url(${config.public.imageurl}${product.images[0]})`
+);
 </script>
 
 <style scoped>
@@ -31,8 +35,10 @@ const product = defineProps<Product>();
   border-radius: 8px;
   padding: 16px;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* background-image: v-bind(image); */
+  /* background-size: cover; */
+  /* background-size: contain; */
+  /* background-position: center center; */
+  background-image: v-bind(image);
   display: flex;
   justify-content: space-between;
   align-items: start;
