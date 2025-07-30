@@ -60,8 +60,25 @@ const { data: productsData } = await useFetch<GetProductsResponse>(
 
 .catalog__cards {
   display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   column-gap: 24px;
   row-gap: 70px;
+}
+
+@media screen and (max-width: 1330px) {
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    column-gap: 16px;
+    row-gap: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    column-gap: 12px;
+    row-gap: 24px;
+  }
 }
 </style>

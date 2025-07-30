@@ -35,7 +35,6 @@ const image = computed(
 .card__image {
   aspect-ratio: 1/1;
   width: 100%;
-  min-width: 280px;
   border-radius: 8px;
   padding: 16px;
   background-repeat: no-repeat;
