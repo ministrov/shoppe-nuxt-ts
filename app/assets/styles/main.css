@@ -30,3 +30,7 @@ h1 {
   text-align: center;
   color: var(--color-black);
 }
+
+h1.left {
+  text-align: left;
+}
