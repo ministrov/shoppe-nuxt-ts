@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="home">
     <h1>Welcome to the Home Page</h1>
@@ -6,9 +5,6 @@
 
     <NuxtLink to="/about">About</NuxtLink>
 
-    <!-- <Icon name="icons:tw" /> -->
-
-    <!-- <button @click="openAbout">Move to</button> -->
     <InputField
       variant="black"
       placeholder="Ваш email для акций и предложений"

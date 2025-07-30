@@ -21,11 +21,8 @@
 import type { GetCategoriesResponse } from "~/interfaces/category.interface";
 import type { GetProductsResponse } from "~/interfaces/product.interface";
 
-// const API_URL = "http://localhost:3000/api";
-
 const config = useRuntimeConfig();
 const API_URL = config.public.apiurl;
-// const MY_ENV_VAR = config.public.myEnvVariable;
 const select = ref("");
 const { data } = await useFetch<GetCategoriesResponse>(API_URL + "/categories");
 const defaultSelect = { value: "", label: "Категория" };

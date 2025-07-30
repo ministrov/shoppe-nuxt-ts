@@ -26,8 +26,6 @@ const model = defineModel<string>();
 const { options } = defineProps<{
   options: { label: string; value: string }[];
 }>();
-
-// console.log(model.value);
 </script>
 
 <style scoped>

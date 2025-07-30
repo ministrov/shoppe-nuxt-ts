@@ -28,13 +28,7 @@
   </div>
 </template>
 
-<script setup>
-// console.log("Setup");
-
-// onMounted(() => {
-//   console.log("Mounted");
-// });
-</script>
+<script setup></script>
 
 <style scoped>
 .header {
