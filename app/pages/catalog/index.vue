@@ -19,7 +19,19 @@
 const input = ref("");
 const select = ref("");
 // const API_URL = "http://localhost:3000/api";
+async function* createAsyncIterable() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
 
+async function main() {
+  for await (const item of createAsyncIterable()) {
+    console.log(`The current item is ${item} and the type is ${typeof item}`);
+  }
+}
+
+main();
 // async function sendData() {
 //   const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories", {
 //     method: "POST",
