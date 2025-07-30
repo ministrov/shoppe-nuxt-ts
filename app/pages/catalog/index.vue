@@ -18,13 +18,16 @@ const API_URL = "http://localhost:3000/api";
 // const input = ref("");
 const select = ref("");
 const { data } = await useFetch<GetCategoriesResponse>(API_URL + "/categories");
+const defaultSelect = { value: "", label: "Категория" };
 const categoriesSelect = computed(() => {
   return data.value
-    ? data.value?.categories.map((category) => ({
-        value: category.id.toString(),
-        label: category.name,
-      }))
-    : [];
+    ? data.value?.categories
+        .map((category) => ({
+          value: category.id.toString(),
+          label: category.name,
+        }))
+        .concat(defaultSelect)
+    : [defaultSelect];
 });
 </script>
 
