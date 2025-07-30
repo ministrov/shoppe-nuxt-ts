@@ -1,33 +1,81 @@
 <template>
   <div>
-    <h1>Welcome to the Catalog Page</h1>
+    <h1 class="left">Каталог товаров</h1>
 
-    <SelectField
-      v-model="select"
-      :options="[
-        { value: '', label: 'Категории' },
-        { value: 'option1', label: 'Option 1' },
-        { value: 'option2', label: 'Option 2' },
-      ]"
-    />
+    <div class="catalog">
+      <div class="catalog__filter">
+        <SelectField v-model="select" :options="categoriesSelect" />
+      </div>
+      <div class="catalog__cards">
+        <CatalogCard
+          v-for="product in productsData?.products"
+          :key="product.id"
+          v-bind="product"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// import type { GetCategoriesResponse } from "~/interfaces/category.interface";
+import type { GetCategoriesResponse } from "~/interfaces/category.interface";
+import type { GetProductsResponse } from "~/interfaces/product.interface";
 
-const input = ref("");
+const config = useRuntimeConfig();
+const API_URL = config.public.apiurl;
 const select = ref("");
-// const API_URL = "http://localhost:3000/api";
+const { data } = await useFetch<GetCategoriesResponse>(API_URL + "/categories");
+const defaultSelect = { value: "", label: "Категория" };
+const categoriesSelect = computed(() => {
+  return data.value
+    ? data.value?.categories
+        .map((category) => ({
+          value: category.id.toString(),
+          label: category.name,
+        }))
+        .concat(defaultSelect)
+    : [defaultSelect];
+});
 
-// async function sendData() {
-//   const data = await $fetch<GetCategoriesResponse>(API_URL + "/categories", {
-//     method: "POST",
-//     body: input,
-//   });
-
-//   console.log(data);
-// }
-
-console.log(input.value);
+const { data: productsData } = await useFetch<GetProductsResponse>(
+  API_URL + "/products"
+);
 </script>
+
+<style scoped>
+.left {
+  margin-bottom: 38px;
+}
+.catalog {
+  display: flex;
+  gap: 40px;
+}
+
+.catalog__filter {
+  width: 260px;
+}
+
+.catalog__cards {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  column-gap: 24px;
+  row-gap: 70px;
+}
+
+@media screen and (max-width: 1330px) {
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    column-gap: 16px;
+    row-gap: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    column-gap: 12px;
+    row-gap: 24px;
+  }
+}
+</style>
