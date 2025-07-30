@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // token: process.env.TOKEN,
     // apiurl: process.env.APIURL,
-    apiurl: "",
+    public: {
+      myEnvVariable: "",
+      apiurl: "",
+    },
   },
   modules: [
     '@nuxt/eslint',
