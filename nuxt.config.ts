@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devtools: { enabled: true }, compatibilityDate: '2025-07-15',
   runtimeConfig: {
     public: {
       myEnvVariable: "",
@@ -13,6 +14,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/icon',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt'
   ],
   app: {
     pageTransition: {
@@ -28,7 +31,6 @@ export default defineNuxtConfig({
       },
     ],
   },
-  devtools: { enabled: true }, compatibilityDate: '2025-07-15',
   // eslint: {
   //   config: {
   //     stylistic: true, // Enforces consistent style rules

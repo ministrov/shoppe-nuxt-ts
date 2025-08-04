@@ -1,9 +1,16 @@
 <template>
-  <NuxtLink class="card" :to="`/catalog/${product.id}`">
+  <NuxtLink
+    class="card"
+    :to="`/catalog/${product.id}`"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
+  >
     <div class="card__image">
       <span v-if="product.discount > 0" class="card__discount"
         >-{{ product.discount }}%</span
       >
+      <span v-else></span>
+      <AddFavorite :id="product.id" :is-shown="isHovered" />
     </div>
     <div class="card__footer">
       <div class="card__name">
@@ -22,6 +29,7 @@ const config = useRuntimeConfig();
 const image = computed(
   () => `url(${config.public.imageurl}${product.images[0]})`
 );
+const isHovered = ref(false);
 </script>
 
 <style scoped>
