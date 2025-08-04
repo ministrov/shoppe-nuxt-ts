@@ -22,17 +22,25 @@ import type { GetCategoriesResponse } from "~/interfaces/category.interface";
 import type { GetProductsResponse } from "~/interfaces/product.interface";
 
 const config = useRuntimeConfig();
+const route = useRoute();
+const router = useRouter();
+
 const API_URL = config.public.apiurl;
-const category_id = ref("");
+const category_id = ref(route.query.category_id?.toString() || "");
+
+watch(category_id, () => {
+  router.replace({ query: { category_id: category_id.value } });
+});
 const query = computed(() => ({
-  limit: 20,
-  offset: 0,
-  category_id: category_id.value || undefined,
+  limit: route.query.limit ?? 20,
+  offset: route.query.offset ?? 0,
+  category_id: route.query.category_id || undefined,
 }));
 const { data } = await useFetch<GetCategoriesResponse>(API_URL + "/categories");
 const { data: productsData } = await useFetch<GetProductsResponse>(
   API_URL + "/products",
   {
+    key: "get-products",
     query,
   }
 );
@@ -48,7 +56,10 @@ const categoriesSelect = computed(() => {
     : [defaultSelect];
 });
 
-console.log(categoriesSelect);
+// console.log(categoriesSelect);
+console.log(route);
+
+console.log(router);
 </script>
 
 <style scoped>
