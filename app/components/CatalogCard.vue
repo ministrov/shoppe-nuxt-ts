@@ -22,6 +22,8 @@ const config = useRuntimeConfig();
 const image = computed(
   () => `url(${config.public.imageurl}${product.images[0]})`
 );
+// console.log(image);
+// console.log(typeof image.value);
 </script>
 
 <style scoped>
