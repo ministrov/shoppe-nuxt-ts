@@ -2,7 +2,7 @@
   <button
     v-show="isShown || favoriteStore.isFavorite(id)"
     class="fav-button"
-    @click.stop.prevent="() => favoriteStore.toggelFavorite(id)"
+    @click.stop.prevent="() => favoriteStore.toggleFavorite(id)"
   >
     <Icon name="icons:add-favorite" size="18px" />
   </button>

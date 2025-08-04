@@ -41,5 +41,5 @@ export const useFavoritesStore = defineStore('favorites', () => {
   //   favoriteIds.value = data.categories.map((c) => c.id)
   // }
 
-  return { favoriteIds, toggelFavorite: toggleFavorite, isFavorite }
+  return { favoriteIds, toggleFavorite, isFavorite }
 });
