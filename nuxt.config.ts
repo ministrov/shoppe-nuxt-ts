@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/icon',
+    '@pinia/nuxt',
   ],
   app: {
     pageTransition: {
