@@ -4,7 +4,10 @@
 
     <div class="catalog">
       <div class="catalog__filter">
-        <InputField v-model="search" variant="gray" placeholder="Поиск..." />
+        <div class="catalog__search">
+          <InputField v-model="search" variant="gray" placeholder="Поиск..." />
+          <Icon name="icons:search" size="18px" />
+        </div>
         <SelectField v-model="category_id" :options="categoriesSelect" />
       </div>
       <div class="catalog__cards">
@@ -84,6 +87,17 @@ console.log(router);
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.catalog__search {
+  position: relative;
+}
+
+.catalog__search .iconify {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .catalog__cards {
