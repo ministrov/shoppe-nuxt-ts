@@ -1,5 +1,9 @@
 <template>
-  <button v-show="isShown" class="fav-button">
+  <button
+    v-show="isShown || favoriteStore.isFavorite(id)"
+    class="fav-button"
+    @click.stop.prevent="() => favoriteStore.toggelFavorite(id)"
+  >
     <Icon name="icons:add-favorite" size="18px" />
   </button>
 </template>
@@ -10,7 +14,7 @@ const { id, isShown } = defineProps<{
   isShown: boolean;
 }>();
 
-console.log(id, isShown);
+const favoriteStore = useFavoritesStore();
 </script>
 
 <style scoped>
