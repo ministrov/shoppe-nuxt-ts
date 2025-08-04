@@ -4,6 +4,8 @@
       <span v-if="product.discount > 0" class="card__discount"
         >-{{ product.discount }}%</span
       >
+
+      <AddFavorite :id="product.id" :is-shown="true" />
     </div>
     <div class="card__footer">
       <div class="card__name">
