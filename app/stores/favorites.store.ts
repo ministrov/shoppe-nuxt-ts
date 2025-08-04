@@ -1,7 +1,10 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import type { GetCategoriesResponse } from '~/interfaces/category.interface';
 
 export const useFavoritesStore = defineStore('favorites', () => {
+  const config = useRuntimeConfig();
+  const API_URL = config.public.apiurl;
   const favoriteIds = ref<number[]>([]);
 
   function addToFavorites(id: number) {
@@ -17,5 +20,10 @@ export const useFavoritesStore = defineStore('favorites', () => {
     });
   }
 
-  return { favoriteIds, addToFavorites, removeFromFavorites }
+  async function fetchFavorites() {
+    const data = await $fetch<GetCategoriesResponse>(API_URL + '/categories');
+    favoriteIds.value = data.categories.map((c) => c.id)
+  }
+
+  return { favoriteIds, addToFavorites, removeFromFavorites, fetchFavorites }
 });
