@@ -68,9 +68,11 @@ const categoriesSelect = computed(() => {
 });
 
 // console.log(categoriesSelect);
-console.log(route);
+// console.log(route);
 
-console.log(router);
+console.log(query);
+
+// console.log(router);
 </script>
 
 <style scoped>
