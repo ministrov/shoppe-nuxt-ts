@@ -22,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import { useDebounceFn } from "@vueuse/core";
 import type { GetCategoriesResponse } from "~/interfaces/category.interface";
 import type { GetProductsResponse } from "~/interfaces/product.interface";
 
@@ -36,11 +37,20 @@ const search = ref(route.query.search?.toString() || "");
 // watch(category_id, () => {
 //   router.replace({ query: { category_id: category_id.value } });
 // });
-watchEffect(() => {
+// watchEffect(() => {
+
+// });
+
+watch([category_id, search], () => {
+  changeRoute(category_id, search);
+});
+
+const changeRoute = useDebounceFn((category_id, search) => {
   router.replace({
     query: { category_id: category_id.value, search: search.value },
   });
-});
+}, 1000);
+
 const query = computed(() => ({
   limit: route.query.limit ?? 20,
   offset: route.query.offset ?? 0,
@@ -66,13 +76,6 @@ const categoriesSelect = computed(() => {
         .concat(defaultSelect)
     : [defaultSelect];
 });
-
-// console.log(categoriesSelect);
-// console.log(route);
-
-console.log(query);
-
-// console.log(router);
 </script>
 
 <style scoped>
