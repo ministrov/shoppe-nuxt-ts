@@ -1,6 +1,5 @@
 <template>
-  <div>Add Favorite</div>
-  <button>
+  <button v-show="isShown" class="fav-button">
     <Icon name="icons:add-favorite" size="18px" />
   </button>
 </template>
@@ -13,3 +12,11 @@ const { id, isShown } = defineProps<{
 
 console.log(id, isShown);
 </script>
+
+<style scoped>
+.fav-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+</style>
