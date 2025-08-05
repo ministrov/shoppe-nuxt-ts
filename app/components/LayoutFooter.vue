@@ -77,18 +77,25 @@
 
 .footer__form {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer__input {
   width: 396px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer__subscribe {
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 50%;
   background: none;
   border: none;
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 1024px) {
@@ -122,7 +129,7 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    padding: 48px;
+    padding-bottom: 48px;
   }
 
   .footer__top {
@@ -161,7 +168,7 @@
 
 @media screen and (max-width: 375px) {
   .footer {
-    padding: 32px;
+    padding-bottom: 32px;
   }
 
   .footer__bottom {
