@@ -1,11 +1,16 @@
 <template>
-  <div class="catalog__grid">
+  <div class="catalog">
     <h1 class="left">Избранное</h1>
-    <CatalogCard
-      v-for="product in products"
-      :key="product.id"
-      v-bind="product"
-    />
+
+    <ul class="catalog__grid">
+      <li class="catalog__item">
+        <CatalogCard
+          v-for="product in products"
+          :key="product.id"
+          v-bind="product"
+        />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -30,6 +35,11 @@ watchEffect(async () => {
 </script>
 
 <style scoped>
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .catalog__grid {
   display: grid;
   width: 100%;
