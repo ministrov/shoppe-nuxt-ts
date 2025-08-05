@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="catalog-page">
     <h1 class="left">Каталог товаров</h1>
 
     <div class="catalog">
@@ -18,7 +18,7 @@
         />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -79,6 +79,10 @@ const categoriesSelect = computed(() => {
 </script>
 
 <style scoped>
+.catalog-page {
+  min-height: 100vh;
+}
+
 .left {
   margin-bottom: 38px;
 }
