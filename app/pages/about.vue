@@ -123,8 +123,6 @@
 }
 
 .about__item-content ul {
-  /* margin: 0;
-  padding: 0; */
   list-style: none;
 }
 
@@ -141,5 +139,22 @@
   font-size: 26px;
   color: var(--color-black);
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    max-width: 100%;
+    padding: 0 16px;
+    padding-bottom: 100px;
+  }
+
+  .about__item-title {
+    text-align: center;
+  }
+
+  .about__image-block img {
+    width: 100%;
+    max-height: 220px;
+  }
 }
 </style>
