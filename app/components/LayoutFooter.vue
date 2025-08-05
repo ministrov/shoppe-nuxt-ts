@@ -9,7 +9,8 @@
       </ul>
       <div class="footer__form">
         <InputField
-          placeholder="Введите email для новостей и акций"
+          class="footer__input"
+          placeholder="Ваш email для акций и предложений"
           variant="black"
         />
         <button class="footer__subscribe">
@@ -18,7 +19,9 @@
       </div>
     </div>
     <div class="footer__buttom">
-      <div>© {{ new Date().getFullYear() }} Shoppe</div>
+      <div class="footer__copyright">
+        © {{ new Date().getFullYear() }} Shoppe
+      </div>
       <div class="footer__social">
         <SocialIcons />
       </div>
@@ -34,7 +37,6 @@
   max-width: 1248px;
   margin: 0 auto;
   padding: 0 16px;
-  background-color: purple;
 }
 .footer hr {
   height: 1px;
@@ -75,14 +77,60 @@
   position: relative;
 }
 
-.footer__form input {
-  min-width: 380px;
+.footer__input {
+  width: 396px;
 }
+
 .footer__subscribe {
   position: absolute;
   right: 0;
   top: 10px;
   background: none;
   border: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__buttom {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .footer__input {
+    order: 1;
+  }
+
+  .footer__top ul {
+    order: 2;
+  }
+
+  .footer__social {
+    order: 1;
+  }
+
+  .footer__copyright {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__top {
+    align-items: normal;
+  }
+
+  .footer__input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .footer__top ul {
+    flex-direction: column;
+  }
 }
 </style>
