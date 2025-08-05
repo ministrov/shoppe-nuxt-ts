@@ -37,6 +37,7 @@
   max-width: 1248px;
   margin: 0 auto;
   padding: 0 16px;
+  padding-bottom: 68px;
 }
 .footer hr {
   height: 1px;
@@ -120,6 +121,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .footer {
+    padding: 48px;
+  }
+
   .footer__top {
     align-items: normal;
   }
@@ -155,6 +160,10 @@
 }
 
 @media screen and (max-width: 375px) {
+  .footer {
+    padding: 32px;
+  }
+
   .footer__bottom {
     align-items: flex-start;
     gap: 25px;
