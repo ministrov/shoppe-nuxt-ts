@@ -91,4 +91,10 @@
   margin-top: 4px;
   border-left: 1px solid var(--color-dark-gray);
 }
+
+@media screen and (max-width: 768px) {
+  .header__content {
+    display: none;
+  }
+}
 </style>
