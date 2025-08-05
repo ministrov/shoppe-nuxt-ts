@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <div class="footer__buttom">
+    <div class="footer__bottom">
       <div class="footer__copyright">
         © {{ new Date().getFullYear() }} Shoppe
       </div>
@@ -59,6 +59,7 @@
 .footer__top ul a {
   font-size: 16px;
   font-weight: 400;
+  line-height: 22px;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-dark-gray);
@@ -68,7 +69,7 @@
   fill: red;
 }
 
-.footer__buttom {
+.footer__bottom {
   display: flex;
   justify-content: space-between;
 }
@@ -95,7 +96,7 @@
     gap: 32px;
   }
 
-  .footer__buttom {
+  .footer__bottom {
     flex-direction: column;
     align-items: center;
     gap: 32px;
@@ -129,8 +130,34 @@
 }
 
 @media screen and (max-width: 575px) {
+  .footer {
+    gap: 0;
+  }
+
+  .footer hr {
+    display: none;
+  }
+
+  .footer__top {
+    gap: 20px;
+  }
+
   .footer__top ul {
     flex-direction: column;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .footer__top ul a {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer__bottom {
+    align-items: flex-start;
+    gap: 25px;
   }
 }
 </style>

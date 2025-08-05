@@ -28,4 +28,11 @@ const data = defineModel<string>();
 .black {
   border-bottom: 1px solid var(--color-black);
 }
+
+@media screen and (max-width: 575px) {
+  .input {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
 </style>
