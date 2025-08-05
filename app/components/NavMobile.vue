@@ -1,7 +1,14 @@
 <template>
   <div class="nav-mobile">
-    <Icon name="icons:cart" size="25px" />
-    <Icon name="icons:burger-menu" size="25px" @click="toggleMenu" />
+    <Icon name="icons:cart" size="18px" />
+    <Icon v-if="isOpen" name="icons:close" size="18px" @click="closeMenu" />
+    <Icon
+      v-else
+      class="nav-mobile__burger"
+      name="icons:burger-menu"
+      size="20px"
+      @click="openMenu"
+    />
 
     <div v-if="isOpen" class="nav-mobile__content">Mobile content</div>
   </div>
@@ -10,7 +17,11 @@
 <script setup>
 const isOpen = ref(false);
 
-function toggleMenu() {
+function openMenu() {
+  isOpen.value = true;
+}
+
+function closeMenu() {
   if (isOpen.value) {
     isOpen.value = false;
   } else {
@@ -35,7 +46,12 @@ function toggleMenu() {
 
 @media screen and (max-width: 768px) {
   .nav-mobile {
-    display: block;
+    display: flex;
+    gap: 16px;
+  }
+
+  .nav-mobile__burger {
+    cursor: pointer;
   }
 }
 </style>

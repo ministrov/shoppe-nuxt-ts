@@ -1,6 +1,6 @@
 <template>
   <div class="no-favorites">
-    <h1>You have not added a favorites yet!!!</h1>
+    <h1>Вы еще не добавили ничего в избранное!!!</h1>
   </div>
 </template>
 
