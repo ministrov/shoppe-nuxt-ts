@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <NuxtLink to="/">
+    <NuxtLink to="/" class="header__logo">
       <IconLogo />
     </NuxtLink>
 
@@ -25,6 +25,8 @@
         </NuxtLink>
       </div>
     </div>
+
+    <NavMobile />
   </div>
 </template>
 
@@ -93,8 +95,20 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    position: relative;
+    margin-top: 32px;
+    border-bottom: none;
+  }
+
   .header__content {
     display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    margin-top: 16px;
   }
 }
 </style>
