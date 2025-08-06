@@ -31,30 +31,18 @@
         <Icon name="icons:cart" size="24px" />
       </NuxtLink>
 
-      <button class="nav-mobile__burger" @click="openMenu">
-        <Icon name="icons:burger-menu" size="24px" />
+      <button class="nav-mobile__burger">
+        <Icon name="icons:burger-menu" size="24px" @click="isOpen = true" />
       </button>
     </div>
 
-    <NavMobile :open="isOpen" @close="closeMenu" />
+    <NavMobile :open="isOpen" @close="isOpen = false" />
   </div>
 </template>
 
 <script setup>
 const isOpen = ref(false);
-console.log(isOpen);
-
-function openMenu() {
-  isOpen.value = true;
-}
-
-function closeMenu() {
-  if (isOpen.value) {
-    isOpen.value = false;
-  } else {
-    isOpen.value = true;
-  }
-}
+// console.log(isOpen);
 </script>
 
 <style scoped>

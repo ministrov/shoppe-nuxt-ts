@@ -17,6 +17,7 @@
   gap: 5px;
   padding: 10px;
   background-color: var(--color-gray-light);
+  border: 1px solid var(--color-gray-light);
   border-radius: 4px;
 }
 
@@ -25,11 +26,11 @@
   font-family: var(--font);
   font-size: 16px;
   border: none;
-  background-color: transparent;
+  background-color: var(--color-gray-light);
 }
 
-.searchInput::placeholder {
+/* .searchInput::placeholder {
   font-family: var(--font) !important;
   color: var(--color-dark-gray);
-}
+} */
 </style>
