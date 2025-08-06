@@ -27,12 +27,12 @@
     </div>
 
     <div class="header__mobile-btns">
-      <NuxtLink to="#">
-        <Icon name="icons:cart" size="18px" />
+      <NuxtLink to="/cart">
+        <Icon name="icons:cart" size="24px" />
       </NuxtLink>
 
       <button class="nav-mobile__burger">
-        <Icon name="icons:burger-menu" size="20px" />
+        <Icon name="icons:burger-menu" size="24px" />
       </button>
     </div>
 
@@ -58,6 +58,17 @@
   display: flex;
   align-items: center;
   gap: 60px;
+}
+
+.header__mobile-btns {
+  display: none;
+}
+
+.nav-mobile__burger {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .header__menu {
@@ -113,6 +124,11 @@
 
   .header__content {
     display: none;
+  }
+
+  .header__mobile-btns {
+    display: flex;
+    gap: 16px;
   }
 }
 
