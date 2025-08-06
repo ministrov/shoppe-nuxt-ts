@@ -1,14 +1,6 @@
 <template>
   <div class="nav-mobile">
-    <Icon name="icons:cart" size="18px" />
     <Icon v-if="isOpen" name="icons:close" size="18px" @click="closeMenu" />
-    <Icon
-      v-else
-      class="nav-mobile__burger"
-      name="icons:burger-menu"
-      size="20px"
-      @click="openMenu"
-    />
 
     <div v-if="isOpen" class="nav-mobile__content">Mobile content</div>
   </div>
@@ -17,9 +9,9 @@
 <script setup>
 const isOpen = ref(false);
 
-function openMenu() {
-  isOpen.value = true;
-}
+// function openMenu() {
+//   isOpen.value = true;
+// }
 
 function closeMenu() {
   if (isOpen.value) {

@@ -26,6 +26,16 @@
       </div>
     </div>
 
+    <div class="header__mobile-btns">
+      <NuxtLink to="#">
+        <Icon name="icons:cart" size="18px" />
+      </NuxtLink>
+
+      <button class="nav-mobile__burger">
+        <Icon name="icons:burger-menu" size="20px" />
+      </button>
+    </div>
+
     <NavMobile />
   </div>
 </template>
