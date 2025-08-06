@@ -28,9 +28,4 @@
   border: none;
   background-color: var(--color-gray-light);
 }
-
-/* .searchInput::placeholder {
-  font-family: var(--font) !important;
-  color: var(--color-dark-gray);
-} */
 </style>

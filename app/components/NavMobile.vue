@@ -23,9 +23,9 @@
 
     <div class="nav-mobile__content">
       <div class="nav-mobile__menu">
-        <NuxtLink to="/">Главная</NuxtLink>
-        <NuxtLink to="/catalog">Магазин</NuxtLink>
-        <NuxtLink to="/about">О нас</NuxtLink>
+        <NuxtLink to="/" class="nav-mobile__link">Главная</NuxtLink>
+        <NuxtLink to="/catalog" class="nav-mobile__link">Магазин</NuxtLink>
+        <NuxtLink to="/about" class="nav-mobile__link">О нас</NuxtLink>
       </div>
       <div class="nav-mobile__hr"></div>
       <div class="nav-mobile__icons">
@@ -66,8 +66,9 @@ emit("close");
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 16px 16px;
-    background-color: tomato;
+    padding: 24px 32px;
+    /* background-color: tomato; */
+    background-color: var(--color-white);
   }
 
   .nav-mobile__header {
@@ -81,6 +82,36 @@ emit("close");
     margin-bottom: 40px;
   }
 
+  .nav-mobile__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 30px;
+  }
+
+  .nav-mobile__hr {
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+  }
+
+  .nav-mobile__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .nav-mobile__link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font);
+    font-size: 24px;
+    line-height: 30px;
+    text-decoration: none;
+    color: var(--color-black);
+  }
+
   .nav-mobile__btns {
     display: flex;
     gap: 16px;
@@ -90,6 +121,17 @@ emit("close");
     border: none;
     background: none;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .nav-mobile {
+    padding: 16px 16px;
+  }
+
+  .nav-mobile__link {
+    font-size: 20px;
+    line-height: 26px;
   }
 }
 </style>

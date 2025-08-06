@@ -42,7 +42,6 @@
 
 <script setup>
 const isOpen = ref(false);
-// console.log(isOpen);
 </script>
 
 <style scoped>
