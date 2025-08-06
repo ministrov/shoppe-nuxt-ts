@@ -67,7 +67,6 @@ emit("close");
     bottom: 0;
     left: 0;
     padding: 24px 32px;
-    /* background-color: tomato; */
     background-color: var(--color-white);
   }
 
@@ -124,7 +123,7 @@ emit("close");
   }
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 375px) {
   .nav-mobile {
     padding: 16px 16px;
   }
