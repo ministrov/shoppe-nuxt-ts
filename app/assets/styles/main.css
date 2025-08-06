@@ -1,11 +1,12 @@
 :root {
   --font: "DM Sans", sans-serif;
-  --color-accent: #a18a68;
   --color-black: #000000;
+  --color-white: #ffffff;
+  --color-accent: #a18a68;
   --color-black-hover: #222222;
+  --color-gray-light: #efefef;
   --color-dark-gray: #707070;
   --color-gray: #d8d8d8;
-  --color-white-light: #ffffff;
 }
 
 *,

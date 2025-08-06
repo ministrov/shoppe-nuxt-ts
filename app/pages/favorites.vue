@@ -2,6 +2,8 @@
   <div class="catalog">
     <h1 class="left">Избранное</h1>
 
+    <NoFavorites v-if="products?.length === 0" />
+
     <ul class="catalog__grid">
       <li class="catalog__item">
         <CatalogCard
@@ -21,9 +23,6 @@ const config = useRuntimeConfig();
 const API_URL = config.public.apiurl;
 const products = ref<Product[]>();
 
-console.log(products);
-console.log(products.value);
-
 watchEffect(async () => {
   const data = await Promise.all(
     favoriteStore.favoriteIds.map((id) => {
@@ -39,11 +38,15 @@ watchEffect(async () => {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  min-height: 100vh;
 }
 .catalog__grid {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 64px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 </style>

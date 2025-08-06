@@ -70,10 +70,10 @@ const isHovered = ref(false);
   color: var(--color-black);
 }
 .card__discount {
-  background: var(--color-accent);
-  border-radius: 4px;
   padding: 2px 8px;
   font-size: 12px;
-  color: var(--color-white-light);
+  color: var(--color-white);
+  border-radius: 4px;
+  background: var(--color-accent);
 }
 </style>

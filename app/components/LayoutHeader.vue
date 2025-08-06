@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <NuxtLink to="/">
+    <NuxtLink to="/" class="header__logo">
       <IconLogo />
     </NuxtLink>
 
@@ -25,10 +25,24 @@
         </NuxtLink>
       </div>
     </div>
+
+    <div class="header__mobile-btns">
+      <NuxtLink to="/cart">
+        <Icon name="icons:cart" size="24px" />
+      </NuxtLink>
+
+      <button class="nav-mobile__burger">
+        <Icon name="icons:burger-menu" size="24px" @click="isOpen = true" />
+      </button>
+    </div>
+
+    <NavMobile :open="isOpen" @close="isOpen = false" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const isOpen = ref(false);
+</script>
 
 <style scoped>
 .header {
@@ -46,6 +60,17 @@
   display: flex;
   align-items: center;
   gap: 60px;
+}
+
+.header__mobile-btns {
+  display: none;
+}
+
+.nav-mobile__burger {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .header__menu {
@@ -93,8 +118,25 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    position: relative;
+    margin-top: 32px;
+    border-bottom: none;
+  }
+
   .header__content {
     display: none;
+  }
+
+  .header__mobile-btns {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    margin-top: 16px;
   }
 }
 </style>
