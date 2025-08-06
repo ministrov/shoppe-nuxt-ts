@@ -1,33 +1,27 @@
 <template>
-  <div class="nav-mobile">
+  <div v-if="open" class="nav-mobile">
     <header>
       <NuxtLink to="/cart">
         <Icon name="icons:cart" size="18px" />
       </NuxtLink>
 
-      <button>
-        <Icon v-if="isOpen" name="icons:close" size="18px" @click="closeMenu" />
+      <button @click="$emit('close')">
+        <Icon name="icons:close" size="18px" />
       </button>
     </header>
 
     <!-- <div v-if="isOpen" class="nav-mobile__content">Mobile content</div> -->
+    <SearchForm />
   </div>
 </template>
 
-<script setup>
-const isOpen = ref(false);
+<script setup lang="ts">
+const emit = defineEmits(["close"]);
+const { open } = defineProps<{
+  open: boolean;
+}>();
 
-// function openMenu() {
-//   isOpen.value = true;
-// }
-
-// function closeMenu() {
-//   if (isOpen.value) {
-//     isOpen.value = false;
-//   } else {
-//     isOpen.value = true;
-//   }
-// }
+emit("close");
 </script>
 
 <style scoped>
@@ -37,8 +31,6 @@ const isOpen = ref(false);
 
 @media screen and (max-width: 768px) {
   .nav-mobile {
-    /* display: flex;
-    gap: 16px; */
     position: fixed;
     z-index: 10;
     top: 0;

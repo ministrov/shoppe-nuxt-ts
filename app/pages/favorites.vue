@@ -23,8 +23,8 @@ const config = useRuntimeConfig();
 const API_URL = config.public.apiurl;
 const products = ref<Product[]>();
 
-console.log(products);
-console.log(products.value);
+// console.log(products);
+// console.log(products.value);
 
 watchEffect(async () => {
   const data = await Promise.all(
