@@ -1,19 +1,21 @@
 <template>
-  <div class="error__wrapper">
-    <h1>{{ error.statusCode }} ошибка</h1>
+  <NuxtLayout>
+    <div class="error__wrapper">
+      <h1>{{ error.statusCode }} ошибка</h1>
 
-    <p v-if="error.statusCode === 404" class="error__message">
-      Страница не найдена, попробуйте перейти на главную страницу
-    </p>
+      <p v-if="error.statusCode === 404" class="error__message">
+        Страница не найдена, попробуйте перейти на главную страницу
+      </p>
 
-    <p v-else class="error__message">
-      {{ error.statusMessage }}
-    </p>
+      <p v-else class="error__message">
+        {{ error.statusMessage }}
+      </p>
 
-    <ActionButton color="ghost" @click="goHome">
-      Главная страница
-    </ActionButton>
-  </div>
+      <ActionButton color="ghost" @click="goHome">
+        Главная страница
+      </ActionButton>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
@@ -37,6 +39,8 @@ function goHome() {
   align-items: center;
   justify-content: center;
   gap: 24px;
+  max-width: 436px;
+  margin: 0 auto;
   height: 100vh;
 }
 
@@ -48,5 +52,14 @@ function goHome() {
   line-height: 26px;
   text-align: center;
   color: var(--color-dark-gray);
+}
+
+@media screen and (max-width: 768px) {
+  .error__wrapper {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 </style>

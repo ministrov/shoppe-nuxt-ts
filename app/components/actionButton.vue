@@ -22,22 +22,22 @@ const { color = "primary" } = defineProps<{
 .primary {
   background: var(--color-black);
   font-family: var(--font);
-  color: var(--color-white-light);
+  color: var(--color-white);
 }
 
 .primary:hover {
   color: var(--color-black);
-  background-color: var(--color-white-light);
+  background-color: var(--color-white);
 }
 
 .ghost {
-  background: var(--color-white-light);
+  background: var(--color-white);
   font-family: var(--font);
   color: var(--color-black);
 }
 
 .ghost:hover {
   background-color: var(--color-black-hover);
-  color: var(--color-white-light);
+  color: var(--color-white);
 }
 </style>
