@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
-// import type { GetCategoriesResponse } from '~/interfaces/category.interface';
 
 export const useFavoritesStore = defineStore('favorites', () => {
   // const config = useRuntimeConfig();
@@ -43,3 +41,5 @@ export const useFavoritesStore = defineStore('favorites', () => {
 
   return { favoriteIds, toggleFavorite, isFavorite }
 });
+
+

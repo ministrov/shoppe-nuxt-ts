@@ -30,6 +30,6 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/icon',
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
+    // 'pinia-plugin-persistedstate/nuxt'
   ]
 })
