@@ -32,9 +32,6 @@ const API_URL = useAPI();
 const email = ref<string | undefined>("");
 const password = ref<string | undefined>("");
 
-// console.log(email);
-// console.log(password);
-
 console.log("URL:", API_URL + "/auth/login");
 async function login() {
   if (!email.value || !password.value) {
@@ -55,8 +52,6 @@ async function login() {
     console.error("Ошибка входа:", error);
   }
 }
-
-// console.log(password.value);
 </script>
 
 <style scoped>
