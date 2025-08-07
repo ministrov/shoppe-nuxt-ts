@@ -31,6 +31,7 @@ import type { LoginResponse } from "~/interfaces/auth.interface";
 const API_URL = useAPI();
 const email = ref<string | undefined>("");
 const password = ref<string | undefined>("");
+const authStore = useAuthStore();
 
 console.log("URL:", API_URL + "/auth/login");
 async function login() {
@@ -47,6 +48,7 @@ async function login() {
         password: password.value,
       },
     });
+    authStore.setToken(data.token);
     console.log("Успешный вход:", data);
   } catch (error) {
     console.error("Ошибка входа:", error);
