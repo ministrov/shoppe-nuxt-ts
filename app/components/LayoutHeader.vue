@@ -52,7 +52,6 @@ const isOpen = ref(false);
   max-width: 1248px;
   margin: 0 auto;
   margin-top: 48px;
-  padding: 0 16px;
   border-bottom: 1px solid var(--color-gray);
 }
 
@@ -121,6 +120,7 @@ const isOpen = ref(false);
   .header {
     position: relative;
     margin-top: 32px;
+    padding: 0 16px;
     border-bottom: none;
   }
 
