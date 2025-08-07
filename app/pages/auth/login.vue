@@ -32,8 +32,8 @@ const API_URL = useAPI();
 const email = ref<string | undefined>("");
 const password = ref<string | undefined>("");
 
-console.log(email);
-console.log(password);
+// console.log(email);
+// console.log(password);
 
 console.log("URL:", API_URL + "/auth/login");
 async function login() {
@@ -48,9 +48,6 @@ async function login() {
       body: {
         email: email.value,
         password: password.value,
-      },
-      headers: {
-        "Content-Type": "application/json",
       },
     });
     console.log("Успешный вход:", data);
