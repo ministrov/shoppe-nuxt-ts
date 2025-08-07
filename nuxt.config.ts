@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  imports: {
+    dirs: ['stores']
+  },
   runtimeConfig: {
     public: {
       myEnvVariable: "",
@@ -30,6 +33,6 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/icon',
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
-  ]
+    'pinia-plugin-persistedstate/nuxt',
+  ],
 })
