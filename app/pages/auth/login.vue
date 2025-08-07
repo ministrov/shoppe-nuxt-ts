@@ -49,10 +49,13 @@ async function login() {
         email: email.value,
         password: password.value,
       },
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    console.log(data);
+    console.log("Успешный вход:", data);
   } catch (error) {
-    console.log(error);
+    console.error("Ошибка входа:", error);
   }
 }
 
