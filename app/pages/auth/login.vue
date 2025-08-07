@@ -6,24 +6,54 @@
 
     <form action="#" class="login-form">
       <div class="login-form__fiels">
-        <InputField variant="gray" placeholder="Email" />
-        <InputField type="password" variant="gray" placeholder="Пароль" />
+        <InputField v-model="email" variant="gray" placeholder="Email" />
+        <InputField
+          v-model="password"
+          type="password"
+          variant="gray"
+          placeholder="Пароль"
+        />
       </div>
 
       <div class="login-form__actions">
-        <ActionButton color="primary"> Вход </ActionButton>
+        <ActionButton color="primary" @click.stop.prevent="login">
+          Вход
+        </ActionButton>
         <NuxtLink to="/auth/restore">Забыли пароль?</NuxtLink>
       </div>
     </form>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { LoginResponse } from "~/interfaces/auth.interface";
+
+const API_URL = useAPI();
+const email = ref<string | undefined>("");
+const password = ref<string | undefined>("");
+
+// console.log(email.value);
+async function login() {
+  const data = await $fetch<LoginResponse>(API_URL + "/auth/login", {
+    method: "POST",
+    body: {
+      email: email.value,
+      password: password.value,
+    },
+  });
+
+  console.log(data);
+}
+
+// console.log(password.value);
+</script>
 
 <style scoped>
 .login {
   max-width: 500px;
   margin: 0 auto;
+  padding-top: 104px;
+  padding-bottom: 265px;
 }
 .login__title {
   margin-bottom: 64px;
@@ -59,6 +89,7 @@
   font-size: 16px;
   line-height: 22px;
   text-decoration: none;
+  text-align: center;
   color: var(--color-black);
 }
 
