@@ -4,7 +4,7 @@
 
     <div class="login__tabs"></div>
 
-    <form action="#" class="login-form">
+    <form action="POST" class="login-form">
       <div class="login-form__fiels">
         <InputField v-model="email" variant="gray" placeholder="Email" />
         <InputField
@@ -32,17 +32,28 @@ const API_URL = useAPI();
 const email = ref<string | undefined>("");
 const password = ref<string | undefined>("");
 
-// console.log(email.value);
-async function login() {
-  const data = await $fetch<LoginResponse>(API_URL + "/auth/login", {
-    method: "POST",
-    body: {
-      email: email.value,
-      password: password.value,
-    },
-  });
+console.log(email);
+console.log(password);
 
-  console.log(data);
+console.log("URL:", API_URL + "/auth/login");
+async function login() {
+  if (!email.value || !password.value) {
+    alert(
+      "Заполните все поля для входа в систему. Пожалуйста, проверьте введенные данные и повторите попытку."
+    );
+  }
+  try {
+    const data = await $fetch<LoginResponse>(API_URL + "/auth/login", {
+      method: "POST",
+      body: {
+        email: email.value,
+        password: password.value,
+      },
+    });
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // console.log(password.value);
