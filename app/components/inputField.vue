@@ -1,5 +1,11 @@
 <template>
-  <input v-model="data" class="input" :class="variant" name="name" />
+  <input
+    v-model="data"
+    class="input"
+    :class="variant"
+    name="name"
+    automomplete="off"
+  />
 </template>
 
 <script setup lang="ts">

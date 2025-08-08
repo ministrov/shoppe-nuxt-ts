@@ -52,8 +52,6 @@ const { open } = defineProps<{
   open: boolean;
 }>();
 
-console.log(open);
-
 emit("close");
 </script>
 
