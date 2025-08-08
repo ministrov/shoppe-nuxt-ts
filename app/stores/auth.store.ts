@@ -1,3 +1,5 @@
+// import type { DefineStoreOptions } from "pinia";
+
 export const useAuthStore = defineStore(
   'auth',
   () => {

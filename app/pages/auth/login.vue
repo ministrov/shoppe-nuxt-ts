@@ -6,12 +6,18 @@
 
     <form action="POST" class="login-form">
       <div class="login-form__fiels">
-        <InputField v-model="email" variant="gray" placeholder="Email" />
+        <InputField
+          v-model="email"
+          variant="gray"
+          placeholder="Email"
+          autocomplete="false"
+        />
         <InputField
           v-model="password"
           type="password"
           variant="gray"
           placeholder="Пароль"
+          autocomplete="false"
         />
       </div>
 
