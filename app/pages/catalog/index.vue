@@ -9,6 +9,10 @@
           <Icon name="icons:search" size="18px" />
         </div>
         <SelectField v-model="category_id" :options="categoriesSelect" />
+        <div class="catalog__switch">
+          <span class="catalog__switch-label">Со скидкой</span>
+          <USwitch size="xl" color="neutral" value="false" />
+        </div>
       </div>
       <ul class="catalog__cards">
         <CatalogCard
@@ -106,6 +110,12 @@ const categoriesSelect = computed(() => {
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.catalog__switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .catalog__cards {
