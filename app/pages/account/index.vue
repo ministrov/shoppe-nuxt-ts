@@ -1,6 +1,10 @@
 <template>
   <div>
     <h1>Мой аккаунт</h1>
+
+    <NuxtLink href="/" @click="authStore.clearToken">
+      Выход
+    </NuxtLink>
   </div>
 </template>
 
@@ -8,11 +12,7 @@
 definePageMeta({
   middleware: 'auth'
 });
-// const authStore = useAuthStore();
 
-// if (!authStore.token) {
-//   navigateTo('/auth/login');
-// }
+const authStore = useAuthStore();
 
-// // console.log(authStore.token);
 </script>
