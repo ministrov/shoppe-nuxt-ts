@@ -5,11 +5,14 @@
 </template>
 
 <script setup lang="ts">
-const authStore = useAuthStore();
+definePageMeta({
+  middleware: 'auth'
+});
+// const authStore = useAuthStore();
 
-if (!authStore.token) {
-  navigateTo('/auth/login');
-}
+// if (!authStore.token) {
+//   navigateTo('/auth/login');
+// }
 
-// console.log(authStore.token);
+// // console.log(authStore.token);
 </script>
