@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h1>Welcome to the Account Page</h1>
+    <h1>Мой аккаунт</h1>
   </div>
 </template>
 
 <script setup lang="ts">
 const authStore = useAuthStore();
 
-console.log(authStore.token);
+if (!authStore.token) {
+  navigateTo('/auth/login');
+}
+
+// console.log(authStore.token);
 </script>
