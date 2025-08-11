@@ -110,11 +110,11 @@ const categoriesSelect = computed(() => {
 
 .catalog__cards {
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   column-gap: 24px;
   row-gap: 70px;
   margin: 0;
+  margin-bottom: 60px;
   padding: 0;
   list-style: none;
 }
