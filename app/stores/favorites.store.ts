@@ -1,22 +1,13 @@
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
 export const useFavoritesStore = defineStore(
   'favorites',
   () => {
-    // const config = useRuntimeConfig();
-    // const API_URL = config.public.apiurl;
     const favoriteIds = ref<number[]>([]);
-
-    // function addToFavorites(id: number) {
-    //   if (!favoriteIds.value.includes(id)) {
-    //     favoriteIds.value.push(id);
-    //   }
-    // }
-
-    // function removeFromFavorites(id: number) {
-    //   favoriteIds.value = favoriteIds.value.filter((item) => {
-    //     console.log(item);
-    //     return item !== id
-    //   });
-    // }
 
     function isFavorite(id: number) {
       return favoriteIds.value.find(f => f === id);
@@ -40,6 +31,12 @@ export const useFavoritesStore = defineStore(
     // }
 
     return { favoriteIds, toggleFavorite, isFavorite }
+  },
+  {
+    persist: {
+      storage: sessionStorage,
+      pick: ['favoriteIds']
+    }
   }
 );
 
