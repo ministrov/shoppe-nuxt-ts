@@ -1,5 +1,6 @@
 <template>
-  <NuxtLink
+  <li class="catalog__item">
+    <NuxtLink
     class="card"
     :to="`/catalog/${product.id}`"
     @mouseenter="isHovered = true"
@@ -19,6 +20,7 @@
       <div class="card__price">$ {{ product.price }}</div>
     </div>
   </NuxtLink>
+  </li>
 </template>
 
 <script setup lang="ts">

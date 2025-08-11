@@ -10,13 +10,13 @@
         </div>
         <SelectField v-model="category_id" :options="categoriesSelect" />
       </div>
-      <div class="catalog__cards">
+      <ul class="catalog__cards">
         <CatalogCard
           v-for="product in productsData?.products"
           :key="product.id"
           v-bind="product"
         />
-      </div>
+      </ul>
     </div>
   </section>
 </template>
@@ -114,6 +114,9 @@ const categoriesSelect = computed(() => {
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   column-gap: 24px;
   row-gap: 70px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 @media screen and (max-width: 1330px) {

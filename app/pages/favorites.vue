@@ -5,13 +5,11 @@
     <NoFavorites v-if="products?.length === 0" />
 
     <ul class="catalog__grid">
-      <li class="catalog__item">
-        <CatalogCard
+      <CatalogCard
           v-for="product in products"
           :key="product.id"
           v-bind="product"
         />
-      </li>
     </ul>
   </div>
 </template>

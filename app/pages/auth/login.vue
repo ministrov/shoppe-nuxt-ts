@@ -33,7 +33,6 @@ const email = ref<string | undefined>("");
 const password = ref<string | undefined>("");
 const authStore = useAuthStore();
 
-// console.log("URL:", API_URL + "/auth/login");
 async function login() {
   if (!email.value || !password.value) {
     alert(
@@ -49,6 +48,7 @@ async function login() {
       },
     });
     authStore.setToken(data.token);
+    navigateTo("/accout");
     console.log("Успешный вход:", data);
   } catch (error) {
     console.error("Ошибка входа:", error);

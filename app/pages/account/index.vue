@@ -1,11 +1,18 @@
 <template>
   <div>
-    <h1>Welcome to the Account Page</h1>
+    <h1>Мой аккаунт</h1>
+
+    <NuxtLink href="/" @click="authStore.clearToken">
+      Выход
+    </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  middleware: 'auth'
+});
+
 const authStore = useAuthStore();
 
-console.log(authStore.token);
 </script>
