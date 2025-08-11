@@ -9,14 +9,35 @@
           <Icon name="icons:search" size="18px" />
         </div>
         <SelectField v-model="category_id" :options="categoriesSelect" />
+        <div class="catalog__price-search">
+          <USlider v-model="price" color="neutral" size="lg" />
+
+          <span>{{ `Цена: $${price[0]} - $${price[1]}` }}</span>
+        </div>
+        <div class="catalog__switch">
+          <span class="catalog__switch-label">Со скидкой</span>
+          <USwitch size="xl" color="neutral" value="false" />
+        </div>
       </div>
-      <ul class="catalog__cards">
-        <CatalogCard
-          v-for="product in productsData?.products"
-          :key="product.id"
-          v-bind="product"
-        />
-      </ul>
+
+      <div class="catalog__cards-wrapper">
+        <ul class="catalog__cards">
+          <CatalogCard
+            v-for="product in productsData?.products"
+            :key="product.id"
+            v-bind="product"
+          />
+        </ul>
+
+        <UPagination
+          v-model:page="page"
+          active-color="neutral"
+          size="xl"
+          :total="8"
+          :items-per-page="6"
+          :sibling-count="1"
+          />
+      </div>
     </div>
   </section>
 </template>
@@ -32,6 +53,8 @@ const router = useRouter();
 
 const category_id = ref(route.query.category_id?.toString() || "");
 const search = ref(route.query.search?.toString() || "");
+const price = ref([0, 185]);
+const page = ref(3);
 
 // watch(category_id, () => {
 //   router.replace({ query: { category_id: category_id.value } });
@@ -80,6 +103,8 @@ const categoriesSelect = computed(() => {
 <style scoped>
 .catalog-page {
   min-height: 100vh;
+  padding-top: 96px;
+  padding-bottom: 164px;
 }
 
 .left {
@@ -94,7 +119,7 @@ const categoriesSelect = computed(() => {
   width: 260px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .catalog__search {
@@ -108,13 +133,25 @@ const categoriesSelect = computed(() => {
   transform: translateY(-50%);
 }
 
+.catalog__price-search {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.catalog__switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .catalog__cards {
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   column-gap: 24px;
   row-gap: 70px;
   margin: 0;
+  margin-bottom: 60px;
   padding: 0;
   list-style: none;
 }
