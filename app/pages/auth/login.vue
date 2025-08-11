@@ -48,6 +48,7 @@ async function login() {
       },
     });
     authStore.setToken(data.token);
+    navigateTo("/accout");
     console.log("Успешный вход:", data);
   } catch (error) {
     console.error("Ошибка входа:", error);
