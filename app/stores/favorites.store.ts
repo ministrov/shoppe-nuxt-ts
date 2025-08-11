@@ -40,10 +40,7 @@ export const useFavoritesStore = defineStore(
     // }
 
     return { favoriteIds, toggleFavorite, isFavorite }
-  },
-  // {
-  //   persist: true
-  // }
+  }
 );
 
 

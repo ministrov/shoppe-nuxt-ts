@@ -12,10 +12,5 @@ export const useAuthStore = defineStore(
     }
 
     return { token, setToken, clearToken }
-
-  },
-  // {
-  //   persist: true
-  // }
-  // persist: true
+  }
 );

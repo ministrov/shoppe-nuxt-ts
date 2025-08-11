@@ -33,10 +33,12 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/icon',
     ['@pinia/nuxt', {
-      storesDirs: ['./app/stores**'],
-      piniaPluginPersistedstate: true,
+      storesDirs: ['./app/stores/**'],
+      piniaPluginPersistedstate: {
+        storage: 'localStorage',
+        include: ['auth', 'favorites'],
+      },
     }],
-    'pinia-plugin-persistedstate/nuxt',
-    '@nuxt/ui'
+    '@nuxt/ui',
   ],
 })
