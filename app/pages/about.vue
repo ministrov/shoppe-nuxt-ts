@@ -17,12 +17,7 @@
         <article class="about__item-content">
           <h3 class="about__item-title">Тренды в украшениях</h3>
           <div class="about__image-block">
-            <img
-              src="../assets/about-img-1.jpg"
-              width="670"
-              height="300"
-              alt="about-img-1"
-            />
+            <img src="../assets/about-img-1.jpg" width="670" height="300" alt="about-img-1" />
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -41,12 +36,7 @@
         <article class="about__item-content">
           <h3 class="about__item-title">Сделано с любовью</h3>
           <div class="about__image-block">
-            <img
-              src="../assets/about-img-2.jpg"
-              width="670"
-              height="300"
-              alt="about-img-2"
-            />
+            <img src="../assets/about-img-2.jpg" width="670" height="300" alt="about-img-2" />
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -123,12 +113,18 @@
 }
 
 .about__item-content ul {
+  padding-left: 16px;
   list-style: none;
 }
 
 .about__item-content ul li {
   position: relative;
   padding-left: 16px;
+  color: var(--color-black);
+}
+
+.about__item-content ul li:not(:last-child) {
+  margin-bottom: 16px;
 }
 
 .about__item-content ul li::before {
