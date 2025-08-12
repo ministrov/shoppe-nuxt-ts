@@ -231,4 +231,12 @@ const categoriesSelect = computed(() => {
     grid-template-columns: repeat(2, minmax(136px, 1fr));
   }
 }
+
+/* .message {
+  max-inline-size: 60%;
+  padding: 12px 16px;
+  margin: 0;
+  text-wrap: balance;
+  border-radius: 20px;
+} */
 </style>
