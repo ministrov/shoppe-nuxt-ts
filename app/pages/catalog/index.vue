@@ -110,6 +110,7 @@ const categoriesSelect = computed(() => {
 .left {
   margin-bottom: 38px;
 }
+
 .catalog {
   display: flex;
   gap: 40px;
@@ -165,10 +166,20 @@ const categoriesSelect = computed(() => {
 }
 
 @media screen and (max-width: 768px) {
+  .catalog {
+    flex-direction: column;
+  }
+
   .catalog__cards {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     column-gap: 12px;
     row-gap: 24px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(136px, 1fr));
   }
 }
 </style>

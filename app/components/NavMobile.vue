@@ -16,7 +16,6 @@
       </div>
     </header>
 
-    <!-- <div v-if="isOpen" class="nav-mobile__content">Mobile content</div> -->
     <div class="nav-mobile__search">
       <SearchForm />
     </div>
@@ -51,8 +50,6 @@ const emit = defineEmits(["close"]);
 const { open } = defineProps<{
   open: boolean;
 }>();
-
-console.log(open);
 
 emit("close");
 </script>

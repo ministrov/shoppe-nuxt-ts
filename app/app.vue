@@ -28,4 +28,10 @@ import "~/assets/styles/main.css";
 .page-leave-to {
   opacity: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 16px;
+  }
+}
 </style>
