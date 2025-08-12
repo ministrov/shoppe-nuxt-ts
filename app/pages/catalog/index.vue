@@ -1,6 +1,10 @@
 <template>
   <section class="catalog-page">
-    <h1 class="left">Каталог товаров</h1>
+    <div class="catalog-page__search-mobile">
+      <SearchForm />
+    </div>
+
+    <h1 class="left catalog-page__title">Каталог товаров</h1>
 
     <div class="catalog">
       <div class="catalog__filter">
@@ -36,7 +40,7 @@
           :total="8"
           :items-per-page="6"
           :sibling-count="1"
-          />
+        />
       </div>
     </div>
   </section>
@@ -107,9 +111,14 @@ const categoriesSelect = computed(() => {
   padding-bottom: 164px;
 }
 
+.catalog-page__search-mobile {
+  display: none;
+}
+
 .left {
   margin-bottom: 38px;
 }
+
 .catalog {
   display: flex;
   gap: 40px;
@@ -164,11 +173,62 @@ const categoriesSelect = computed(() => {
   }
 }
 
+@media screen and (max-width: 946px) {
+  .catalog {
+    flex-direction: column;
+  }
+
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    column-gap: 12px;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .catalog-page__search-mobile {
+    display: block;
+    margin-bottom: 48px;
+  }
+
+  .catalog-page {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
+
+  .catalog {
+    flex-direction: column;
+  }
+
   .catalog__cards {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     column-gap: 12px;
     row-gap: 24px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .catalog-page__search-mobile {
+    margin-top: 17px;
+    margin-bottom: 24px;
+  }
+
+  .catalog-page {
+    padding-top: 0;
+    padding-bottom: 64px;
+  }
+
+  .catalog-page__title {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .catalog__filter {
+    width: 100%;
+  }
+
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(136px, 1fr));
   }
 }
 </style>

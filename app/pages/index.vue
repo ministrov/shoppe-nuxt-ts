@@ -1,24 +1,66 @@
 <template>
   <div class="home">
-    <h1>Welcome to the Home Page</h1>
-    <p v-if="isPage !== false">This is your first Nuxt page.</p>
 
-    <NuxtLink to="/about">About</NuxtLink>
+    <section class="home__promo">
+      <div class="home__carousel">
+        <UCarousel v-slot="{ item }" dots :items="items" class="w-full mx-auto">
+          <img :src="item" width="1248" height="646" class="rounded-lg">
+        </UCarousel>
+      </div>
+    </section>
 
-    <InputField
-      variant="black"
-      placeholder="Ваш email для акций и предложений"
-    />
+    <section class="home__cards">
+      <ul>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+        <li>item-1</li>
+      </ul>
+    </section>
+
   </div>
 </template>
 
 <script setup lang="ts">
-const isPage = ref(true);
+const items = [
+  'https://picsum.photos/640/640?random=1',
+  'https://picsum.photos/640/640?random=2',
+  'https://picsum.photos/640/640?random=3',
+  'https://picsum.photos/640/640?random=4',
+  'https://picsum.photos/640/640?random=5',
+  'https://picsum.photos/640/640?random=6'
+]
 </script>
 
 <style scoped>
 .home {
-  padding: 2rem;
+  /* padding: 2rem; */
   background-color: rebeccapurple;
 }
 </style>
