@@ -21,12 +21,18 @@ import "~/assets/styles/main.css";
 .main {
   max-width: 1248px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 40px 0;
 }
 
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .main {
+    padding: 24px 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
