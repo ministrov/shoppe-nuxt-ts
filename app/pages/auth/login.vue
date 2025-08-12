@@ -4,7 +4,7 @@
 
     <div class="login__tabs"></div>
 
-    <form action="POST" class="login-form">
+    <form method="post" action="" class="login-form">
       <div class="login-form__fiels">
         <InputField v-model="email" variant="gray" placeholder="Email" />
         <InputField

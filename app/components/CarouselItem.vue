@@ -22,9 +22,6 @@ const item = defineProps<{
   src: string;
   price: number;
 }>();
-
-console.log(item.src);
-console.log(typeof item.src);
 </script>
 
 <style scoped>
@@ -34,7 +31,6 @@ console.log(typeof item.src);
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: tomato;
 }
 
 .carousel__text {
@@ -42,6 +38,37 @@ console.log(typeof item.src);
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
-  color: white;
+  padding-left: 40px;
+}
+
+.carousel__item-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 39px;
+  color: var(--color-white);
+}
+
+.carousel__item-price {
+  margin-bottom: 48px;
+  font-family: var(--font);
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--color-white);
+}
+
+.carousel__item-link {
+  display: block;
+  width: 193px;
+  height: 53px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--color-white);
+  border-radius: 6px;
+  border: 2px solid var(--color-white);
 }
 </style>

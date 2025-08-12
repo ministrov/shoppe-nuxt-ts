@@ -1,15 +1,19 @@
 <template>
   <div class="home">
-
     <section class="home__promo">
+      <h2 class="visually-hidden">Промо секция со слайдером</h2>
       <UCarousel
         v-slot="{ item }" dots :items="items" class="w-full mx-auto">
         <CarouselItem v-bind="item" />
       </UCarousel>
     </section>
 
-    <section class="home__cards"></section>
-
+    <section class="home__cards">
+      <h2>Последние поступления</h2>
+      <NuxtLink to="/catalog">
+        Все
+      </NuxtLink>
+    </section>
   </div>
 </template>
 
@@ -19,6 +23,7 @@ import img1 from '@/assets/about-img-1.jpg'
 import img2 from '@/assets/about-img-2.jpg'
 // eslint-disable-next-line import/no-duplicates
 import img3 from '@/assets/about-img-1.jpg'
+import { NuxtLink } from '#components'
 
 interface CarouselItem {
   id: number,
@@ -37,5 +42,9 @@ const items = [
 <style scoped>
 .home {
   padding: 0 16px 0  0;
+}
+
+.home__promo {
+  margin-bottom: 64px;
 }
 </style>
