@@ -2,11 +2,9 @@
   <div class="home">
 
     <section class="home__promo">
-      <div class="home__carousel">
-        <UCarousel v-slot="{ item }" dots :items="items" class="w-full mx-auto">
-           <CarouselItem v-bind="item" />
-        </UCarousel>
-      </div>
+      <UCarousel v-slot="{ item }" dots :items="items" class="w-full mx-auto">
+        <CarouselItem v-bind="item" />
+      </UCarousel>
     </section>
 
     <section class="home__cards"></section>
@@ -15,6 +13,11 @@
 </template>
 
 <script setup lang="ts">
+// eslint-disable-next-line import/no-duplicates
+import img1 from '@/assets/about-img-1.jpg'
+import img2 from '@/assets/about-img-2.jpg'
+// eslint-disable-next-line import/no-duplicates
+import img3 from '@/assets/about-img-1.jpg'
 
 interface CarouselItem {
   id: number,
@@ -24,9 +27,9 @@ interface CarouselItem {
 }
 
 const items = [
-  { id: 1, title: 'Gold big hoops', price: 69.9, src: '../assets/about-img-1.jpg' },
-  { id: 2, title: 'Gold big hoops', price: 149.9, src: '../assets/about-img-2.jpg' },
-  { id: 3, title: 'Gold big hoops', price: 99.9, src: '../assets/about-img-1.jpg' },
+  { id: 1, title: 'Gold big hoops', price: 69.9, src: img1 },
+  { id: 2, title: 'Gold big hoops', price: 149.9, src: img2 },
+  { id: 3, title: 'Gold big hoops', price: 99.9, src: img3 },
 ] as CarouselItem[]
 </script>
 
@@ -35,4 +38,12 @@ const items = [
   /* padding: 2rem; */
   background-color: rebeccapurple;
 }
+
+/* .home__carousel {
+  position: relative;
+  width: 100%;
+  height: 678px;
+  overflow: hidden;
+  background-color: purple;
+} */
 </style>
