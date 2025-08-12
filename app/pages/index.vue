@@ -2,7 +2,8 @@
   <div class="home">
 
     <section class="home__promo">
-      <UCarousel v-slot="{ item }" dots :items="items" class="w-full mx-auto">
+      <UCarousel
+        v-slot="{ item }" dots :items="items" class="w-full mx-auto">
         <CarouselItem v-bind="item" />
       </UCarousel>
     </section>
@@ -35,15 +36,6 @@ const items = [
 
 <style scoped>
 .home {
-  /* padding: 2rem; */
-  background-color: rebeccapurple;
+  padding: 0 16px 0  0;
 }
-
-/* .home__carousel {
-  position: relative;
-  width: 100%;
-  height: 678px;
-  overflow: hidden;
-  background-color: purple;
-} */
 </style>

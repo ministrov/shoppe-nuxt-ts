@@ -2,8 +2,8 @@
   <div class="carousel__item">
     <img
       :src="item.src"
-      width="1248"
-      height="646"
+      width="1232"
+      height="551"
       alt="{{ `Jewellry name ${item.title}` }}"
     />
 
