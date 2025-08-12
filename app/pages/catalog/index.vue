@@ -173,9 +173,21 @@ const categoriesSelect = computed(() => {
   }
 }
 
+@media screen and (max-width: 946px) {
+  .catalog {
+    flex-direction: column;
+  }
+
+  .catalog__cards {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    column-gap: 12px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .catalog-page__search-mobile {
     display: block;
+    margin-bottom: 48px;
   }
 
   .catalog-page {
@@ -209,6 +221,10 @@ const categoriesSelect = computed(() => {
     margin-bottom: 16px;
     font-size: 20px;
     line-height: 26px;
+  }
+
+  .catalog__filter {
+    width: 100%;
   }
 
   .catalog__cards {
