@@ -1,25 +1,30 @@
 <template>
   <li class="catalog__item">
     <NuxtLink
-    class="card"
-    :to="`/catalog/${product.id}`"
-    @mouseenter="isHovered = true"
-    @mouseleave="isHovered = false"
-  >
-    <div class="card__image">
-      <span v-if="product.discount > 0" class="card__discount"
-        >-{{ product.discount }}%</span
-      >
-      <span v-else></span>
-      <AddFavorite :id="product.id" :is-shown="isHovered" />
-    </div>
-    <div class="card__footer">
-      <div class="card__name">
-        {{ product.name }}
+      class="card"
+      :to="`/catalog/${product.id}`"
+      @mouseenter="isHovered = true"
+      @mouseleave="isHovered = false"
+    >
+      <div class="card__image">
+        <span v-if="product.discount > 0" class="card__discount"
+          >-{{ product.discount }}%</span
+        >
+        <span v-else></span>
+        <AddFavorite :id="product.id" :is-shown="isHovered" />
       </div>
-      <div class="card__price">$ {{ product.price }}</div>
-    </div>
-  </NuxtLink>
+      <div class="card__footer">
+        <div class="card__name">
+          {{ product.name }}
+        </div>
+        <div class="card__price">
+          <span v-if="product.discount" class="card__price-discount"
+            >$ {{ product.price }}</span
+          >
+          $ {{ priceWithDiscount }}
+        </div>
+      </div>
+    </NuxtLink>
   </li>
 </template>
 
@@ -32,6 +37,8 @@ const image = computed(
   () => `url(${config.public.imageurl}${product.images[0]})`
 );
 const isHovered = ref(false);
+const sale = computed(() => (product.price * product.discount) / 100);
+const priceWithDiscount = computed(() => Math.round(product.price - sale.value));
 </script>
 
 <style scoped>
@@ -77,5 +84,13 @@ const isHovered = ref(false);
   color: var(--color-white);
   border-radius: 4px;
   background: var(--color-accent);
+}
+
+.card__price-discount {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  text-decoration: line-through;
+  color: var(--color-red);
 }
 </style>
