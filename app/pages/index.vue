@@ -1,8 +1,24 @@
 <template>
   <div class="home">
+    <div class="home__search-mobile">
+      <SearchForm />
+    </div>
+
     <section class="home__promo">
       <h2 class="visually-hidden">Промо секция со слайдером</h2>
-      <UCarousel v-slot="{ item }" dots :items="items" class="w-full mx-auto">
+      <UCarousel
+        v-slot="{ item }"
+        auto-height
+        dots
+        :items="items"
+        class="w-full mx-auto"
+        :ui="{
+          container: 'transition-[height]',
+          controls: 'absolute -bottom-3 z-50',
+          dots: '-bottom-2',
+          dot: 'w-2 h-2'
+        }"
+      >
         <CarouselItem v-bind="item" />
       </UCarousel>
     </section>
@@ -34,11 +50,10 @@ import { NuxtLink } from "#components";
 import type { GetProductsResponse } from "~/interfaces/product.interface";
 
 const API_URL = useAPI();
+const data = await $fetch<GetProductsResponse>(API_URL + "/products");
 const lastTrendProducts = computed(() => {
   return data?.products.slice(0, 6);
 });
-
-console.log(lastTrendProducts);
 
 interface CarouselItem {
   id: number;
@@ -53,12 +68,15 @@ const items = [
   { id: 3, title: "Gold big hoops", price: 99.9, src: img3 },
 ] as CarouselItem[];
 
-const data = await $fetch<GetProductsResponse>(API_URL + "/products");
 </script>
 
 <style scoped>
 .home {
   padding-bottom: 100px;
+}
+
+.home__search-mobile {
+  display: none;
 }
 
 .home__promo {
@@ -104,6 +122,25 @@ const data = await $fetch<GetProductsResponse>(API_URL + "/products");
 }
 
 @media screen and (max-width: 768px) {
+  .home {
+    padding-bottom: 64px;
+  }
+
+  .home__promo {
+    margin-bottom: 48px;
+  }
+
+  .home__search-mobile {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+
+  .home__cards-header h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
   .home__list {
     grid-template-columns: repeat(2, minmax(136px, 1fr));
     column-gap: 16px;
@@ -112,6 +149,15 @@ const data = await $fetch<GetProductsResponse>(API_URL + "/products");
 }
 
 @media screen and (max-width: 475px) {
+  .home {
+    padding-bottom: 32px;
+  }
+
+  .home__search-mobile {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
   .home__cards-header h2 {
     font-size: 24px;
     line-height: 30px;
