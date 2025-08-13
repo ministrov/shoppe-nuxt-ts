@@ -10,7 +10,7 @@
 
     <div class="carousel__text">
       <h3 class="carousel__item-title">{{ item.title }}</h3>
-      <p class="carousel__item-price">$ {{ item.price }}</p>
+      <p class="carousel__item-price">$ {{ Math.round(item.price) }}</p>
 
       <NuxtLink to="/catalog" class="carousel__item-link"> Смотреть </NuxtLink>
     </div>
@@ -36,6 +36,7 @@ const item = defineProps<{
 
 .carousel__item-img {
   aspect-ratio: 16 / 9;
+  border-radius: 16px;
 }
 
 .carousel__text {

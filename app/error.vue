@@ -25,7 +25,7 @@ const { error } = defineProps<{
   error: NuxtError;
 }>();
 
-console.log(error, "error");
+// console.log(error, "error");
 
 function goHome() {
   navigateTo("/");

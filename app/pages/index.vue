@@ -8,14 +8,10 @@
       <h2 class="visually-hidden">Промо секция со слайдером</h2>
       <UCarousel
         v-slot="{ item }"
-        dots
+        loop
         :items="items"
         class="w-full mx-auto"
-        :ui="{
-          controls: 'absolute -bottom-3 z-50',
-          dots: '-bottom-2',
-          dot: 'w-2 h-2'
-        }"
+        :autoplay="{ delay: 2500 }"
       >
         <CarouselItem v-bind="item" />
       </UCarousel>
@@ -39,10 +35,8 @@
 </template>
 
 <script setup lang="ts">
-// eslint-disable-next-line import/no-duplicates
-import img1 from "@/assets/about-img-1.jpg";
+import img1 from "@/assets/about-img-3.jpg";
 import img2 from "@/assets/about-img-2.jpg";
-// eslint-disable-next-line import/no-duplicates
 import img3 from "@/assets/about-img-1.jpg";
 import { NuxtLink } from "#components";
 import type { GetProductsResponse } from "~/interfaces/product.interface";
@@ -62,8 +56,8 @@ interface CarouselItem {
 
 const items = [
   { id: 1, title: "Gold big hoops", price: 69.9, src: img1 },
-  { id: 2, title: "Gold big hoops", price: 149.9, src: img2 },
-  { id: 3, title: "Gold big hoops", price: 99.9, src: img3 },
+  { id: 2, title: "Chic Gold Statements", price: 149.9, src: img2 },
+  { id: 3, title: "Luxe Golden Essentials", price: 99.9, src: img3 },
 ] as CarouselItem[];
 
 </script>
