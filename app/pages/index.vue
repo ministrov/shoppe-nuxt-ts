@@ -8,12 +8,10 @@
       <h2 class="visually-hidden">Промо секция со слайдером</h2>
       <UCarousel
         v-slot="{ item }"
-        auto-height
         dots
         :items="items"
         class="w-full mx-auto"
         :ui="{
-          container: 'transition-[height]',
           controls: 'absolute -bottom-3 z-50',
           dots: '-bottom-2',
           dot: 'w-2 h-2'

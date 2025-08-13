@@ -34,6 +34,10 @@ const item = defineProps<{
   bottom: 0;
 }
 
+.carousel__item-img {
+  aspect-ratio: 16 / 9;
+}
+
 .carousel__text {
   position: absolute;
   top: 50%;
@@ -73,16 +77,28 @@ const item = defineProps<{
   border: 2px solid var(--color-white);
 }
 
-@media screed and (max-width: 768px) {
-  /* .carousel__item-img {
-    aspect-ratio: 4 / 3;
-  } */
-
+@media screen and (max-width: 768px) {
   .carousel__text {
-    bottom: 0;
-    left: 0;
-    transform: translate(0, 0);
-    padding-left: 24px;
+    padding-left: 16px;
+  }
+
+  .carousel__item-img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .carousel__item-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .carousel__item-price {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .carousel__item-link {
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 </style>
