@@ -13,7 +13,13 @@
         <NuxtLink to="/catalog">Все</NuxtLink>
       </header>
 
-      <ul class="home__list"></ul>
+      <ul class="home__list">
+        <CatalogCard
+          v-for="product in lastTrendProducts"
+          :key="product.id"
+          v-bind="product"
+        />
+      </ul>
     </section>
   </div>
 </template>
@@ -25,6 +31,14 @@ import img2 from "@/assets/about-img-2.jpg";
 // eslint-disable-next-line import/no-duplicates
 import img3 from "@/assets/about-img-1.jpg";
 import { NuxtLink } from "#components";
+import type { GetProductsResponse } from "~/interfaces/product.interface";
+
+const API_URL = useAPI();
+const lastTrendProducts = computed(() => {
+  return data?.products.slice(0, 6);
+});
+
+console.log(lastTrendProducts);
 
 interface CarouselItem {
   id: number;
@@ -38,12 +52,14 @@ const items = [
   { id: 2, title: "Gold big hoops", price: 149.9, src: img2 },
   { id: 3, title: "Gold big hoops", price: 99.9, src: img3 },
 ] as CarouselItem[];
+
+const data = await $fetch<GetProductsResponse>(API_URL + '/products');
 </script>
 
 <style scoped>
-/* .home {
-  padding: 0 16px 0 0;
-} */
+.home {
+  padding-bottom: 100px;
+}
 
 .home__promo {
   margin-bottom: 64px;
@@ -54,6 +70,7 @@ const items = [
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .home__cards-header h2 {
@@ -69,5 +86,12 @@ const items = [
   font-weight: 500;
   text-transform: capitalize;
   color: var(--color-accent);
+}
+
+.home__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  column-gap: 58px;
+  row-gap: 86px;
 }
 </style>
