@@ -53,7 +53,7 @@ const items = [
   { id: 3, title: "Gold big hoops", price: 99.9, src: img3 },
 ] as CarouselItem[];
 
-const data = await $fetch<GetProductsResponse>(API_URL + '/products');
+const data = await $fetch<GetProductsResponse>(API_URL + "/products");
 </script>
 
 <style scoped>
@@ -93,5 +93,37 @@ const data = await $fetch<GetProductsResponse>(API_URL + '/products');
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   column-gap: 58px;
   row-gap: 86px;
+}
+
+@media screen and (max-width: 1024px) {
+  .home__list {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    column-gap: 24px;
+    row-gap: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home__list {
+    grid-template-columns: repeat(2, minmax(136px, 1fr));
+    column-gap: 16px;
+    row-gap: 48px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .home__cards-header h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .home__list {
+    row-gap: 24px;
+  }
+
+  .card__name {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 </style>
