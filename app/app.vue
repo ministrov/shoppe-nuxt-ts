@@ -21,7 +21,7 @@ import "~/assets/styles/main.css";
 .main {
   max-width: 1248px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 16px;
 }
 
 .page-enter-from,
