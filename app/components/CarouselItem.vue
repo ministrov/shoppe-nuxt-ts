@@ -1,15 +1,16 @@
 <template>
   <div class="carousel__item">
     <img
+      class="carousel__item-img"
       :src="item.src"
       width="1232"
       height="551"
-      alt="{{ `Jewellry name ${item.title}` }}"
+      :alt="`Jewellry name ${item.title}`"
     />
 
     <div class="carousel__text">
       <h3 class="carousel__item-title">{{ item.title }}</h3>
-      <p class="carousel__item-price">$ {{ item.price }}</p>
+      <p class="carousel__item-price">$ {{ Math.round(item.price) }}</p>
 
       <NuxtLink to="/catalog" class="carousel__item-link"> Смотреть </NuxtLink>
     </div>
@@ -31,6 +32,11 @@ const item = defineProps<{
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.carousel__item-img {
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
 }
 
 .carousel__text {
@@ -70,5 +76,30 @@ const item = defineProps<{
   color: var(--color-white);
   border-radius: 6px;
   border: 2px solid var(--color-white);
+}
+
+@media screen and (max-width: 768px) {
+  .carousel__text {
+    padding-left: 16px;
+  }
+
+  .carousel__item-img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .carousel__item-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .carousel__item-price {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .carousel__item-link {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 </style>
